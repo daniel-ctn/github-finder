@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const UserItem = ({user}) => {
-
     return (
         <div className="card text-center">
             <img src={user.avatar_url} alt="user's avatar" className="round-img" style={{width: '60px'}}/>
