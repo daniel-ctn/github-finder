@@ -6,7 +6,7 @@ import Search from './components/users/Search';
 import Alert from './components/layout/Alert';
 import {BrowserRouter, Switch, Route} from 'react-router-dom';
 import About from './components/pages/About';
-import githubOAuthIns from './request/github-oauth';
+import User from './components/users/User';
 
 const App = () => {
     const [searchUser, setSearchUser] = useState('');
@@ -39,7 +39,10 @@ const App = () => {
                                 </>
                             )
                         }/>
-                        <Route path="/about" component={About}/>
+                        <Route exact path="/about" component={About}/>
+                        <Route exact path="/user/:login" render={props =>
+                            <User {...props}/>
+                        }/>
                     </Switch>
                 </div>
             </BrowserRouter>

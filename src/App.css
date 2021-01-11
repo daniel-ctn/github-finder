@@ -2,7 +2,7 @@
 
 /* Global Styles */
 :root {
-    --primary-color: #dc3545;
+    --primary-color: #167d88;
     --dark-color: #333333;
     --light-color: #f4f4f4;
     --danger-color: #dc3545;
@@ -178,6 +178,9 @@ img {
 }
 .mr-1 {
     margin-right: 0.5rem;
+}
+.ml-1 {
+    margin-left: 0.5rem;
 }
 
 /* Grid */
