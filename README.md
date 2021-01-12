@@ -3,7 +3,8 @@
 The Github finder app shows github user's infomation by using Github API.
 
 
-# Tech feature
+# The app used
+- Context API
 - React router
 - Hooks
 - Axios
