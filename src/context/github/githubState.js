@@ -15,7 +15,7 @@ const GithubState = props => {
 
   const searchUsers = (text) => {
     setLoading()
-    githubOAuthIns.get(`https://api.github.com/search/users?q=${text}&client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`).then(res => {
+    githubOAuthIns.get(`https://api.github.com/search/users?q=${text}&client_id=5b570faffeaa17c886ab&client_secret=2c7bd10dc99f4f3a98fcabf467ecc621bac8549a`).then(res => {
       dispatch({type: SEARCH_USERS, payload: res.data.items})
     }).catch(err => {
       console.log(err)
@@ -23,7 +23,7 @@ const GithubState = props => {
   }
 
   const getUser = (login) => {
-    githubOAuthIns.get(`https://api.github.com/users/${login}?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`).then(res => {
+    githubOAuthIns.get(`https://api.github.com/users/${login}?client_id=5b570faffeaa17c886ab&client_secret=2c7bd10dc99f4f3a98fcabf467ecc621bac8549a`).then(res => {
       dispatch({type: GET_USER, payload: res.data})
     }).catch(err => {
       console.log(err);

@@ -10,7 +10,7 @@ const User = (props) => {
     useEffect(() => {
         const login = props.match.params.login;
         githubContext.getUser(login)
-    }, [props.match.params.login, githubContext]);
+    }, [props.match.params.login]);
 
     return (
         <>
