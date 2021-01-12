@@ -2,12 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="083de9ee-ed35-4d8b-a01b-9e7dccf38577" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/users/User.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/context/github/githubContext.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/context/github/githubReducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/context/github/githubState.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/context/types.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintcache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/users/UserItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/UserItem.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/users/Search.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/Search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/users/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/users/Users.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/users/Users.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,9 +33,13 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="editing.templates" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -46,7 +54,10 @@
       <workItem from="1610311950958" duration="1756000" />
       <workItem from="1610326529731" duration="1903000" />
       <workItem from="1610374203615" duration="2790000" />
-      <workItem from="1610395460864" duration="5730000" />
+      <workItem from="1610395460864" duration="10488000" />
+      <workItem from="1610479453353" duration="169000" />
+      <workItem from="1610479782195" duration="6230000" />
+      <workItem from="1610486052605" duration="2479000" />
     </task>
     <servers />
   </component>

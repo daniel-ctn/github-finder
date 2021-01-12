@@ -1,60 +1,56 @@
-import React, {useEffect, useState} from 'react';
-import githubOAuthIns from '../../request/github-oauth';
+import React, { useContext, useEffect } from 'react'
 import {Link} from 'react-router-dom';
 import {faCheck, faTimesCircle} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import GithubContext from '../../context/github/githubContext'
 
 const User = (props) => {
-    const [user, setUser] = useState({});
+    const githubContext = useContext(GithubContext)
 
     useEffect(() => {
         const login = props.match.params.login;
-        githubOAuthIns.get(`https://api.github.com/users/${login}?client_id=${process.env.REACT_APP_GITHUB_CLIENT_ID}&client_secret=${process.env.REACT_APP_GITHUB_CLIENT_SECRET}`).then(res => {
-            setUser(res.data);
-        }).catch(err => {
-            console.log(err);
-        });
-    }, [props.match.params.login]);
+        githubContext.getUser(login)
+    }, [props.match.params.login, githubContext]);
 
     return (
         <>
             <Link to="/" className="btn btn-light">Back to search</Link>
             Hireable:
-            {user.hireable ? <FontAwesomeIcon icon={faCheck} className="text-success ml-1"/> :
+            {githubContext.user.hireable ? <FontAwesomeIcon icon={faCheck} className="text-success ml-1"/> :
                 <FontAwesomeIcon icon={faTimesCircle} className="text-danger ml-1"/>}
             <div className="card grid-2">
                 <div className="all-center">
-                    <img src={user.avatar_url} alt="" className="round-img" style={{width: '150px'}}/>
-                    <h1>{user.name}</h1>
-                    <p>{user.location}</p>
+                    <img src={githubContext.user.avatar_url} alt="" className="round-img" style={{width: '150px'}}/>
+                    <h1>{githubContext.user.name}</h1>
+                    <p>{githubContext.user.location}</p>
                 </div>
                 <div>
-                    {user.bio && (
+                    {githubContext.user.bio && (
                         <>
-                            <h3>Bio</h3>
-                            <p>{user.bio}</p>
+                            <h3>Biography</h3>
+                            <p>{githubContext.user.bio}</p>
                         </>
                     )}
-                    <a href={user.html_url} className="btn btn-dark my-1" target="_blank" rel="noreferrer">Visit Github profile</a>
+                    <a href={githubContext.user.html_url} className="btn btn-dark my-1" target="_blank" rel="noreferrer">Visit Github profile</a>
                     <ul>
                         <li>
-                            {user.login && (
+                            {githubContext.user.login && (
                                 <>
-                                    <strong>Username: </strong> {user.login}
+                                    <strong>Username: </strong> {githubContext.user.login}
                                 </>
                             )}
                         </li>
                         <li>
-                            {user.company && (
+                            {githubContext.user.company && (
                                 <>
-                                    <strong>Company: </strong> {user.company}
+                                    <strong>Company: </strong> {githubContext.user.company}
                                 </>
                             )}
                         </li>
                         <li>
-                            {user.blog && (
+                            {githubContext.user.blog && (
                                 <>
-                                    <strong>Website: </strong> {user.blog}
+                                    <strong>Website: </strong> {githubContext.user.blog}
                                 </>
                             )}
                         </li>
@@ -63,10 +59,10 @@ const User = (props) => {
             </div>
 
             <div className="card text-center">
-                <div className="badge badge-primary">Followers: {user.followers}</div>
-                <div className="badge badge-success">Following: {user.following}</div>
-                <div className="badge badge-danger">Public Repos: {user.public_repos}</div>
-                <div className="badge badge-dark">Public Gists: {user.public_gists}</div>
+                <div className="badge badge-primary">Followers: {githubContext.user.followers}</div>
+                <div className="badge badge-success">Following: {githubContext.user.following}</div>
+                <div className="badge badge-danger">Public Repos: {githubContext.user.public_repos}</div>
+                <div className="badge badge-dark">Public Gists: {githubContext.user.public_gists}</div>
             </div>
         </>
     );

@@ -1,12 +1,14 @@
-import React, {useState} from 'react';
+import React, {useState, useContext} from 'react';
 import PropTypes from 'prop-types';
+import GithubContext from '../../context/github/githubContext'
 
-const Search = (props) => {
+const Search = ({ setAlert}) => {
+    const githubContext = useContext(GithubContext)
     const [text, setText] = useState('');
 
     const onClearHandler = e => {
         setText('');
-        props.clearUsers();
+        githubContext.clearUsers();
     };
 
     return (
@@ -14,11 +16,11 @@ const Search = (props) => {
             <form className="form" onSubmit={(e) => {
                 e.preventDefault();
                 if (text) {
-                    props.setAlert('');
-                    props.onSearch(text);
+                    setAlert('');
+                    githubContext.searchUsers(text);
                 } else {
-                    props.setAlert('Please enter something!');
-                    props.onSearch(text);
+                    setAlert('Please enter something!');
+                    githubContext.clearUsers()
                 }
             }}>
                 <input type="text" name="user" placeholder="Search users..." value={text}
@@ -33,8 +35,6 @@ const Search = (props) => {
 };
 
 Search.propTypes = {
-    onSearch: PropTypes.func.isRequired,
-    clearUsers: PropTypes.func.isRequired,
     setAlert: PropTypes.func.isRequired,
 };
 
